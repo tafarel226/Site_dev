@@ -1,0 +1,117 @@
+<!-- templates/gestion_stock/liste_produits.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+
+   
+      <h1 class="mt-2 mb-2">Commandes d'Achat - Gestion de Stock Militaire</h1>
+
+      
+    
+      <!-- Liste des commandes -->
+      <div class="card mb-4">
+        <div class="card-header">
+          Liste des commandes
+        </div>
+        <div class="card-body">
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#enCours">En cours</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#livrees">Livrées</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#annulees">Annulées</a>
+            </li>
+          </ul>
+    
+          <!-- Contenu des onglets -->
+          <div class="tab-content mt-4">
+            <!-- Commandes en cours -->
+            <div class="tab-pane fade show active" id="enCours">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Numéro de commande</th>
+                    <th scope="col">Fournisseur</th>
+                    <th scope="col">Statut</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>001</td>
+                    <td>Fournisseur A</td>
+                    <td>En attente</td>
+                    <td><button class="btn btn-primary">Détails</button></td>
+                  </tr>
+                  <tr>
+                    <td>002</td>
+                    <td>Fournisseur B</td>
+                    <td>En cours de livraison</td>
+                    <td><button class="btn btn-primary">Détails</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- Commandes livrées -->
+            <div class="tab-pane fade" id="livrees">
+              <!-- Tableau des commandes livrées -->
+              <p>Aucune commande livrée pour le moment.</p>
+            </div>
+            <!-- Commandes annulées -->
+            <div class="tab-pane fade" id="annulees">
+              <!-- Tableau des commandes annulées -->
+              <p>Aucune commande annulée pour le moment.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    
+      <!-- Passation d'une nouvelle commande -->
+      <div class="card mb-4">
+        <div class="card-header">
+          Passation d'une nouvelle commande
+        </div>
+        <div class="card-body">
+          <!-- Formulaire de saisie de nouvelle commande -->
+          <form>
+            <div class="form-group">
+              <label for="fournisseur">Fournisseur :</label>
+              <select class="form-control" id="fournisseur">
+                <option>Fournisseur A</option>
+                <option>Fournisseur B</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="produit">Produit :</label>
+              <input type="text" class="form-control" id="produit">
+            </div>
+            <div class="form-group">
+              <label for="quantite">Quantité :</label>
+              <input type="number" class="form-control" id="quantite">
+            </div>
+            <button type="submit" class="btn btn-primary">Passer la commande</button>
+          </form>
+        </div>
+      </div>
+    
+      <!-- Validation workflow -->
+      <div class="card">
+        <div class="card-header">
+          Validation workflow
+        </div>
+        <div class="card-body">
+          <!-- Workflow de validation des commandes -->
+          <p>Demande -> Approbation -> Comptabilité</p>
+        </div>
+      </div>
+   
+    
+  
+    
+
+
+{% endblock %}

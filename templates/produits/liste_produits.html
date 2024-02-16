@@ -1,0 +1,22 @@
+<!-- templates/gestion_stock/liste_produits.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+    <h1>Liste des produits</h1>
+    <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, distinctio! Facilis, veritatis, quam minima sapiente beatae voluptate incidunt explicabo labore illo, eos dignissimos voluptates porro exercitationem temporibus dicta quaerat dolores.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, distinctio! Facilis, veritatis, quam minima sapiente beatae voluptate incidunt explicabo labore illo, eos dignissimos voluptates porro exercitationem temporibus dicta quaerat dolores.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, distinctio! Facilis, veritatis, quam minima sapiente beatae voluptate incidunt explicabo labore illo, eos dignissimos voluptates porro exercitationem temporibus dicta quaerat dolores.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, distinctio! Facilis, veritatis, quam minima sapiente beatae voluptate incidunt explicabo labore illo, eos dignissimos voluptates porro exercitationem temporibus dicta quaerat dolores.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, distinctio! Facilis, veritatis, quam minima sapiente beatae voluptate incidunt explicabo labore illo, eos dignissimos voluptates porro exercitationem temporibus dicta quaerat dolores.
+    </p>
+    <ul>
+        {% for produit in produits %}
+            <li>{{ produit.nom }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'ajouter_produit' %}">Ajouter un produit</a>
+</div>
+
+{% endblock %}

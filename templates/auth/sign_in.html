@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connexion - Armée</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        background-color: #333;
+        color: #fff;
+      }
+
+      .container {
+        margin-top: 100px;
+      }
+
+      .card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+      }
+
+      .card-header {
+        background-color: #FAFAFA;
+        color: #000;
+        border-radius: 10px 10px 0 0;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .card-body {
+        padding: 30px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-control {
+        background-color: #444;
+        color: #fff;
+        border-color: #555;
+      }
+
+      .btn-primary {
+        background-color: #000;
+        border: none;
+        width: 100%;
+        padding: 12px;
+        border-radius: 5px;
+        font-weight: bold;
+        color: #fff;
+      }
+
+      .btn-primary:hover {
+        background-color: #111;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-header">
+              <h3>Connexion</h3>
+            </div>
+            <div class="card-body">
+              <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="username"
+                    placeholder="Nom d'utilisateur"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="password"
+                    class="form-control"
+                    name="password"
+                    placeholder="Mot de passe"
+                  />
+                </div>
+                {% if error_message %}
+                <div class="alert alert-danger" role="alert">
+                  {{ error_message }}
+                </div>
+                {% endif %}
+                <button type="submit" class="btn btn-primary">Connexion</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
